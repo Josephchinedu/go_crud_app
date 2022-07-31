@@ -1,1 +1,1 @@
-web:go-postgres
+web: bin/go-postgres
