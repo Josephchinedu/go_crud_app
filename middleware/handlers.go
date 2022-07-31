@@ -10,9 +10,9 @@ import (
 	"os"       // used to access the environment variables
 	"strconv"  // used to convert string to int64
 
-	"github.com/gorilla/mux"   // used to access the params in the url
-	"github.com/joho/godotenv" // used to access the environment variables
-	_ "github.com/lib/pq"      // postgres golang driver
+	"github.com/gorilla/mux" // used to access the params in the url
+	// used to access the environment variables
+	_ "github.com/lib/pq" // postgres golang driver
 )
 
 // response format
@@ -24,11 +24,11 @@ type response struct {
 // cretae connection to the database
 func createConnection() *sql.DB {
 	// load the environment variables
-	err := godotenv.Load(".env")
+	// err := godotenv.Load(".env")
 
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	// if err != nil {
+	// 	log.Fatalf("Error loading .env file")
+	// }
 
 	// open the connection to the database
 	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
